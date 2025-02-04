@@ -1,10 +1,14 @@
-import Link from "next/link"
+import { banner } from "@/script"
+import H1 from "./h1-link"
+import Nav from "./nav"
 
 export default function Banner(){
-  return<nav>
-    <Link href={'/'}>首页</Link>
-    <Link href={'/infos'}>最新情报</Link>
-    <Link href={'/plans'}>企划一览</Link>
-    <Link href={'/about'}>关于我们</Link>
-  </nav>
+  const
+    c = banner.bgColor,
+    backgroundColor=`rgba(${c[0]},${c[1]},${c[2]},${c[3]})`
+  
+  return<header style={{backgroundColor}}>
+    <H1/>
+    <Nav/>
+  </header>
 }

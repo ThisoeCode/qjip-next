@@ -1,4 +1,6 @@
-export const metadata={title:'最新情报'}
+import { nav } from "@/script"
+
+export const metadata={title:nav.infos}
 
 export default function _(){
   return<main id="infos">

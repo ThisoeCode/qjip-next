@@ -2,6 +2,8 @@
 import { useEffect } from "react"
 
 export default function NF(){
-  useEffect(()=>{window.location.href='/#404'})
-  return'404'
+  useEffect(()=>{
+    setTimeout(()=>{window.location.replace('/#404')},1)
+  },[])
+  return<main id="nf404"/>
 }

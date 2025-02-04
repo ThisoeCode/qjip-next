@@ -1,24 +1,28 @@
-import{type Metadata}from"next"
 import"./thisoe.css"
-import { layout } from "@/script"
+import"./svg.css"
+import{Noto_Serif_SC}from"next/font/google"
+import{type Metadata}from"next"
+import { metadata as sc } from "@/script"
 import Banner from "@/components/banner"
+
+const Serif = Noto_Serif_SC({subsets:['latin']})
 
 export const metadata:Metadata={
   title: {
-    template: layout.metadata.template,
-    default: layout.metadata.default,
+    template: sc.template,
+    default: sc.default,
     // absolute: '',
   },
-  description: layout.metadata.description,
+  description: sc.description,
 }
 
 export default function _({children}:Readonly<{
   children: React.ReactNode,
 }>){
-  return<html lang="zh-Hans">
+  return<html lang="zh-Hans" className={Serif.className}>
     <body>
       <Banner/>
-      {children}
+      <i id="main-wrap">{children}</i>
     </body>
   </html>
 }
