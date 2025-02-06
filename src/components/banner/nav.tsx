@@ -7,9 +7,9 @@ export default function Nav(){
   return<i id="nav">
     <nav>
       <Link href={'/'}>{nav.index}</Link>
-      <Link href={'/infos'}>{nav.infos}</Link>
-      <Link href={'/plans'}>{nav.plans}</Link>
       <Link href={'/about'}>{nav.about}</Link>
+      <Link href={'/plans'}>{nav.plans}</Link>
+      <Link href={'/infos'}>{nav.infos}</Link>
     </nav>
     <a href={sc.weiboHref} target="_blank"><i className="svg weibo"/></a>
     <button><i className="svg burger"/></button>
