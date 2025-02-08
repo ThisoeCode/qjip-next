@@ -3,27 +3,14 @@ export const
 
 // 1. bilibili embedded video
 /** bilibili iframe */
-Biframe=({url,id,className,style}:{
-  url:string,
-  id?:string,
-  className?:string,
-  style?:React.CSSProperties,
-})=><iframe id={id}style={style}
-  className={"bif "+className||''}
-  src={url}
-  scrolling="no"
-  frameBorder="no"
-  referrerPolicy="strict-origin-when-cross-origin"
-  allowFullScreen
-></iframe>,
-
-BV=({bv,p=1,id,className}:{
+Biframe=({bv,p=1,id,className,style}:{
   bv:string,
   p?:number,
   id?:string,
   className?:string,
+  style?:React.CSSProperties,
 })=><iframe
-  id={id}
+  id={id}style={style}
   className={"bif "+className?className:''}
   src={`//player.bilibili.com/player.html?isOutside=true&bvid=${bv}&p=`+p}
   scrolling="no"
@@ -48,7 +35,7 @@ SteamLink=({children,appId,useLogo=false,id,className,style}:Readonly<{
   // onClick={
   //   ()=>window.open('https://store.steampowered.com/app/'+appId,'_blank')
   // }
->{children||useLogo&&<i className="svg steam" style={{width:'100%',height:'100%'}}/>}</a>,
+>{children||useLogo&&<i className="steam svg" style={{width:'100%',height:'100%'}}/>}</a>,
 
 
 

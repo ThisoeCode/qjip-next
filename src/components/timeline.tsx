@@ -4,16 +4,15 @@ export default function Timeline({
   pinkTitle,
 }:{
   children:React.ReactNode,
-  hasNextLine:boolean,
+  hasNextLine?:boolean,
   pinkTitle:string,
 }){
-  return<section>
+  return<li>
     {hasNextLine&&<i className="za_timeline"/>}
-    <div>
-      <i className="dot"/>
-      <hr/>
+    <i className="pink_title">
+      <i/><hr/>
       <p>{pinkTitle}</p>
-    </div>
+    </i>
     <article>{children}</article>
-  </section>
+  </li>
 }

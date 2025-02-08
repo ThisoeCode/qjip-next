@@ -3,6 +3,10 @@
 TODO
 .vscode/
 
+src/app/(test)
+
+
+
 # env
 .env*
 !.env.FILLME

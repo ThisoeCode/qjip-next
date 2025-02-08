@@ -7,7 +7,7 @@ nav={
   // (原 关于我们)
   about:'关于我们',
   // (原 企划一览)
-  plans:'企划一览',
+  works:'企划一览',
   // (原 最新情报)
   infos:'最新情报',
 },
@@ -23,7 +23,9 @@ banner={
   // 大题目下面的小字
   hl:'女性主人公×幻想恋爱×剧情游戏企划',
   // 微博链接
-  weiboHref:'https://www.weibo.com/n/%E5%8D%83%E8%BF%B9%E5%88%B6%E4%BD%9C%E7%BB%84',
+  weiboHref:'https://weibo.com/n/%E5%8D%83%E8%BF%B9%E5%88%B6%E4%BD%9C%E7%BB%84',
+  // b站链接
+  biliHref:'https://space.bilibili.com/2005632',
 },
 
 
@@ -53,7 +55,7 @@ infos={
 
 
 // ▉ 企划一览 ▉
-plans={
+works={
   // 嵌入测试
   tmp:{
     bi:'//player.bilibili.com/player.html?isOutside=true&aid=113802070720870&bvid=BV1fMcEeVERU&cid=27790477331&p=1',

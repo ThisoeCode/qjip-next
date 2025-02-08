@@ -8,7 +8,7 @@
   --qj-dark: #0c5cae;
   --qj-black: #030730;
   --sh:1pt 1pt #335;
-  --pink_timeline: #b24777;
+  --timeline: #b24777;
   /* sizes */
   --banner-height:80px;
 }
@@ -22,8 +22,8 @@ html,body{
   overflow-x:hidden;
   background-color:var(--qj-black);
 }
-i,button,a,p{all:unset}
-i,a,main,header,nav{display:flex}
+i,button,a,p,ol,li,hr{all:unset}
+i,a,main,header,ol{display:flex}
 button{cursor:pointer}
 
 img{user-select:none}
@@ -49,14 +49,29 @@ img{user-select:none}
   height:100vh;
   background-image:url('/bg.png');
   background-size:cover;
-  background-position:27%;
+  background-position-x:81%;
+  background-position-y:3%;
 }main{
+  flex-direction:column;
   width:100%;
   min-height:calc(100vh - 30pt - var(--banner-height));
   min-height:calc(100dvh - 30pt - var(--banner-height));
   padding:var(--banner-height) 18pt 30pt 18pt;
   color:#fff;
 }
+
+#skeleton{
+  flex-direction:column;
+  gap:12pt;
+}
+#skeleton i{
+  width:100%;
+  background-color:#eee2;
+  border-radius:9pt;
+}
+#skeleton i:nth-child(1){height:16%;margin-top:12pt}
+#skeleton i:nth-child(2){height:39%}
+#skeleton i:nth-child(3){height:27%}
 
 /* banner */
 header{z-index:1;
@@ -65,8 +80,6 @@ header{z-index:1;
   left:0; top:0;
   width:calc(100vw - 42pt);
   height:var(--banner-height);
-  overflow:hidden;
-  display:flex;
   padding:0 21pt;
 }
 
@@ -99,6 +112,7 @@ a#h1 label{
 
 #nav,nav{flex-direction:row;flex-wrap:nowrap}
 nav a{
+  position:relative;
   padding:0 7pt;
   line-height:var(--banner-height);
   font-family:sans-serif;
@@ -110,16 +124,29 @@ nav a{
   transition:color .2s;
 }nav a:hover{color:var(--qj)}
 
-#nav>a{ /* weibo */
-  width:50px;height:50px;
+#nav>a,#nav>button{ /* svg wrapper */
+  width:39px;height:50px;
   margin:auto 0;
   cursor:pointer;
 }
-#nav .weibo{
+#nav .svg{
   width:18pt;height:18pt;
   margin:auto;
 }
-#nav button{display:none}
+#nav button{
+  display:none;
+  margin-left:7pt;
+  padding:0 3pt;
+}
+#nav button .svg{width:25pt;height:25pt;}
+
+h2{
+  margin:0;
+  font-size:18pt;
+  line-height:50pt;
+  text-shadow:0px 0px 3pt #111;
+}
+
 
 
 /*******   INDEX   *******/
@@ -129,6 +156,73 @@ nav a{
 
 
 
+/*******   TIMELINE   *******/
+ol{flex-direction:column}
+li{
+  position:relative;
+  padding-left:30pt;
+}
+.za_timeline{
+  position:absolute;
+  top:8pt;left:15pt;
+  width:2px; height:100%;
+  background-color:var(--timeline);
+}
+.pink_title{
+  position:absolute;
+  top:0;left:15pt;
+}
+.pink_title>i{
+  position:absolute;
+  top:4pt; left:-3.6pt;
+  width:9pt; height:9pt;
+  border-radius:9pt;
+  background:var(--timeline);
+}
+.pink_title>i::after{content:'';
+  position:absolute;
+  top:-2.2pt; left:-2.2pt;
+  width:11pt; height:11pt;
+  border-radius:9pt;
+  border:var(--timeline) solid 2px;
+}
+.pink_title hr{
+  position:absolute;
+  top:8pt;left:0pt;
+  width:27pt; height:2px;
+  background:var(--timeline);
+}
+.pink_title p{
+  position:absolute;
+  top:0;left:27pt;
+  display:block;
+  margin-right:auto;
+  padding:0 3pt;
+  font-size:12pt; line-height:16pt;
+  white-space:nowrap;
+  background:var(--timeline);
+  cursor:default;
+}
+.pink_title p::after{content:'';
+  position:absolute;
+  left:0;top:0;
+  width:100%;height:100%;
+  display:block;
+  border-radius:3pt;
+  box-shadow:0 0 18pt #1115;
+}
+
+
+
+/*******   WORKS   *******/
+#works{
+  
+}
+#works ol{
+  
+}
+
+
 /*******   INFOS   *******/
 #infos{
   
@@ -136,16 +230,9 @@ nav a{
 
 
 
-/*******   PLANS   *******/
-#plans{
-  
-}
-
-
-
 /*******   ABOUT   *******/
-#plans{
-  background-image:url('/bg/about.png');
+#about{
+  background-image:url('/tatie.png');
 }
 
 
@@ -158,9 +245,30 @@ nav a{
 
 
 /* ~~~   screen:phone   ~~~ */
-@media only screen and (max-width: 720px) {
-  
+@media only screen and (max-width: 800px) {
+  /* nav */
+  #nav button{display:flex}
+  nav{
+    align-items:stretch;
+    position:absolute;
+    top:var(--banner-height); right:0;
+    flex-direction:column;
+    background-color:var(--qj-black);
+    background-color:var(--qj-opa);
+    padding:7px 9pt 10pt;
+    border-bottom-left-radius:9pt;
+  }
+  nav a{
+    justify-content:center;
+    line-height:30pt;
+    padding:0 12pt;
+  }nav a:hover{color:var(--qj-faint)}
+
   /* TODO: DELETE */
-  nav{display:none}
   #tmp{left:1vw !important}
+}
+
+@media only screen and (max-width: 567px) {
+  header{padding:0 9pt;width:calc(100vw - 18pt)}
+  #nav a:has(.bili){display:none}
 }

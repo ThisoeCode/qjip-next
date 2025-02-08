@@ -4,6 +4,8 @@ export const metadata={title:nav.infos}
 
 export default function _(){
   return<main id="infos">
-    最新情报
-  </main>
+  <h2>最新情报</h2>
+  <ol>
+    
+  </ol></main>
 }
