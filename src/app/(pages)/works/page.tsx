@@ -11,9 +11,9 @@ export default function _(){
     <Timeline pinkTitle="2025年" hasNextLine>
       <i style={{flexDirection:'column',background:'blue'}}>
         <br/>1. test BiliIframe
-        <Biframe bv={works.tmp.bv} style={{width:480,height:272}}/>
+        <Biframe bv={works.data.YSJDXYQJ.biliBV_main} style={{width:480,height:272}}/>
         2. test Steam protocol
-        <SteamLink appId={works.tmp.appID}useLogo style={{width:30,height:30,cursor:'pointer'}}/>
+        <SteamLink appId={works.data.YSJDXYQJ.steamID}useLogo style={{width:30,height:30,cursor:'pointer'}}/>
       </i>
     </Timeline>
     <Timeline pinkTitle="时间轴测试" hasNextLine>

@@ -14,19 +14,25 @@ export default function Nav(){
         setDisp('flex')
         setShow(false)
       })(),
-    Anch=({href,children}:{href:string,children:React.ReactNode})=>
-      <Link href={href}  onClick={()=>setShow(!isShow)}>{children}</Link>
+    Anch=({href,children}:{href?:string,children?:React.ReactNode})=>
+      href ? <Link href={href||''}  onClick={()=>setShow(!isShow)}>{children}</Link> : <></>,
+    menu=[
+      {href:'/',txt:nav.index},
+      {href:'/about',txt:nav.about},
+      {href:'/works',txt:nav.works},
+      {href:'/infos',txt:nav.infos},
+    ],
+    order=''+(nav.order as number)
 
   useEffect(onResize)
-  window.addEventListener("resize",onResize)
+  useEffect(()=>window.addEventListener("resize",onResize))
 
   return<i id="nav">
-    <nav style={{display}}>
-      <Anch href={'/'}>{nav.index}</Anch>
-      <Anch href={'/works'}>{nav.works}</Anch>
-      <Anch href={'/infos'}>{nav.infos}</Anch>
-      <Anch href={'/about'}>{nav.about}</Anch>
-    </nav>
+    <nav style={{display}}>{
+      Array.from(order).map((v,j)=>
+        <Anch href={menu[parseInt(v)-1]?.href} key={'Anch'+v+j}>{menu[parseInt(v)-1]?.txt}</Anch>
+      )
+    }</nav>
     <a href={sc.weiboHref} target="_blank"><i className="weibo svg"/></a>
     <a href={sc.biliHref} target="_blank"><i className="bili svg"/></a>
     <button onClick={()=>setShow(!isShow)}>
