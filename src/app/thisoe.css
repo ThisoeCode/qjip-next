@@ -448,23 +448,29 @@ q.awork{
 
   /* awork */
   q.awork{
-    grid-template-rows:auto auto repeat(3,180px);
-    grid-template-columns:100%;
+    padding-bottom:18pt;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:auto auto 180px;
     grid-template-areas:
-      'thumbnail'
-      'staff'
-      'bili'
-      'steam'
-      'weshop'
-      'manga';
+      'thumbnail thumbnail thumbnail'
+      'bili bili bili'
+      'staff steam weshop';
     &>i:nth-child(1){
       &>i{
         flex-direction:column;
         &>i:nth-child(2){align-items:start}
       }
     }
-    &>i:nth-child(2){
+    &>i:nth-child(3){
       &>div{width:100%;aspect-ratio:128/72}
+    }
+    &:has(.manga){
+      grid-template-rows:auto auto 180px 180px;
+      grid-template-areas:
+        'thumbnail thumbnail thumbnail'
+        'bili bili bili'
+        'staff steam weshop'
+        'manga manga manga';
     }
   }
   /* TODO: DELETE */
@@ -474,6 +480,23 @@ q.awork{
 @media only screen and (max-width: 567px) {
   header{padding:0 9pt;width:calc(100vw - 18pt)}
   #nav a:has(.bili){display:none}
+  q.awork{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto auto 180px;
+    grid-template-areas:
+      'thumbnail thumbnail'
+      'bili bili'
+      'steam weshop';
+    &>i:nth-child(2){display:none}
+    &:has(.manga){
+      grid-template-rows:auto auto 180px 180px;
+      grid-template-areas:
+        'thumbnail thumbnail'
+        'bili bili'
+        'steam weshop'
+        'manga manga';
+    }
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -481,5 +504,10 @@ q.awork{
     & h1:nth-child(1){display:none}
     & h1:nth-child(2){display:block}
     & label{display:none}
+  }
+  q.awork{
+    &>i{
+      & h3{font-size:15pt}
+    }
   }
 }
