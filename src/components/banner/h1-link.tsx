@@ -10,6 +10,7 @@ export default function H1(){
     />
     <i>
       <h1>{banner.h1}</h1>
+      <h1>{banner.h1phone}</h1>
       <label>{banner.hl}</label>
     </i>
   </a>

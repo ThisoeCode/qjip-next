@@ -3,7 +3,7 @@ import Link from "next/link"
 import { nav, banner as sc } from "@/script"
 import React, { useEffect, useState } from "react"
 
-export default function Nav(){
+export default function Nav({bgc}:{bgc:string}){
   const
     [display,setDisp]=useState('none'),
     [isShow,setShow]=useState(false),
@@ -33,9 +33,16 @@ export default function Nav(){
         <Anch href={menu[parseInt(v)-1]?.href} key={'Anch'+v+j}>{menu[parseInt(v)-1]?.txt}</Anch>
       )
     }</nav>
+    <style jsx>{`
+      @media only screen and (max-width: 800px) {
+        nav{background-color:${bgc}}
+      }
+    `}</style>
     <a href={sc.weiboHref} target="_blank"><i className="weibo svg"/></a>
     <a href={sc.biliHref} target="_blank"><i className="bili svg"/></a>
     <button onClick={()=>setShow(!isShow)}>
+
+
       <i className={(isShow?'close':'burger')+" svg"}/>
     </button>
   </i>

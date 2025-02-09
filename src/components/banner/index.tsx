@@ -9,6 +9,6 @@ export default function Banner(){
   
   return<header style={{backgroundColor}}>
     <H1/>
-    <Nav/>
+    <Nav bgc={backgroundColor}/>
   </header>
 }

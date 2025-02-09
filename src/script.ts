@@ -1,3 +1,5 @@
+import { AworkScript } from "./lib/ts"
+
 export const
 
 // ▉ 目录 ▉ (会同时更新: 页眉目录、每页的标签页标题)
@@ -22,12 +24,26 @@ banner={
   bgColor:[ 30 , 41 , 59 , 0.6 ],
   // LOGO旁的大题目
   h1:'千迹制作组 OFFICIAL SITE',
+  // 手机端页眉大题目
+  h1phone:'千迹制作组',
   // 大题目下面的小字
   hl:'女性主人公×幻想恋爱×剧情游戏企划',
   // 微博链接
   weiboHref:'https://weibo.com/n/%E5%8D%83%E8%BF%B9%E5%88%B6%E4%BD%9C%E7%BB%84',
   // b站链接
   biliHref:'https://space.bilibili.com/2005632',
+},
+
+
+
+// ▉ 统一页脚 ▉
+foot={
+  // 版权信息
+  copyright:'© 2022 千迹制作组',
+  // 备案信息 // TODO: 填写备案号
+  beian:'沪ICP备0000000000号 (待修改)',
+  // 备案链接 // TODO: 填写备案链接
+  beianHref:'https://beian.miit.gov.cn/',
 },
 
 
@@ -50,11 +66,17 @@ index={
 
 
 // ▉ 企划一览 ▉
-works={
+works:{
+  data:Record<string,AworkScript>,
+  imgPath:Record<string,string>,
+  weshopURL:string
+}={
   // 游戏信息
   data:{
     // 《异世界的雪与奇迹》
+
     YSJDXYQJ:{ dir:'YSJDXYQJ',
+      releaseDate:'2023年4月28日初次发布',
       title:'异世界的雪与奇迹',
       elem:'逆穿越×纯爱×圣诞',
       cate:'超短篇视觉小说',
@@ -75,10 +97,10 @@ works={
       ],
 
       steamID:2235810,
-      weshopURL:'',
     },
     // 《瓶中琉璃海》
     PZLLH:{ dir:'PZLLH',
+      releaseDate:'2023年9月29日初次发布',
       title:'瓶中琉璃海',
       elem:'姐弟恋×三人行×扭曲纯爱',
       cate:'短篇视觉小说',
@@ -97,14 +119,31 @@ works={
         {label:'游戏录屏',list:['']},
       ],
       steamID:2235810,
-      weshopURL:'',
+      manga:true,
     },
+    // 更多游戏…
   },
+
+
+  // 图片命名
+  // 说明：文件名及后缀必须完全一致！文件夹名称为大写开头字母，所有内部图片名统一。
+  imgPath:{
+    // 主图（横幅）
+    main:'main.png',
+    // 萌版 // TODO: ⭐存留有待商讨确定⭐
+    smol1:'smol1.png',
+    smol2:'smol2.png',
+    smol3:'smol3.png',
+  },
+
+  // 微店网页版链接
+  weshopURL:'https://weidian.com/?userid=1744983385',
 },
-/* 游戏信息变量名备忘
+/* 游戏信息对象变量名使用备忘剪切板
 
     // 《游戏名称（注释用）》
-    XXX:{ dir:'XXX',
+    XXX:{ dir:'指定public/内的图片资源文件夹名',
+      releaseDate:'XX年XX月XX日初次发布',
       title:'标题',
       elem:'元素一×元素二…',
       cate:'类型',
@@ -117,15 +156,16 @@ works={
         {job:'原画',name:'惑灵'},
       ],
 
-      biliBV_main:'BV1fMcEeVERU',
+      biliBV_main:'直接展示的视频的BV号',
       biliBV_list:[
-        {label:'宣传概念PV',list:['','']},
-        {label:'宣传概念PV',list:['']},
-        {label:'游戏录屏',list:['']},
-        {label:'开发日志',list:['']},
+        {label:'小标题',list:['视频一BV号','视频二BV号']},
+        {label:'开发日志',list:['BVxxx']},
       ],
-      steamID:2235810,
-      weshopURL:'',
+
+      steamID:Steam商品ID,
+
+      // TODO: 漫画内容（待定）
+      manga:{},
     },
 
 */

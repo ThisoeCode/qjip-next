@@ -8,7 +8,7 @@ export default function Timeline({
   pinkTitle:string,
 }){
   return<li>
-    {hasNextLine&&<i className="za_timeline"/>}
+    <i className={hasNextLine?"za_timeline":"last_line"}/>
     <i className="pink_title">
       <i/><hr/>
       <p>{pinkTitle}</p>
