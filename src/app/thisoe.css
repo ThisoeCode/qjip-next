@@ -416,6 +416,9 @@ q.awork{
 /*******   ABOUT   *******/
 #about{
   background-image:url('/tatie.png');
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:bottom right;
 }
 
 

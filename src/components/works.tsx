@@ -1,6 +1,7 @@
 import { works } from "@/script"
 import { Biframe, SteamLink } from "./_client"
 import { AworkScript } from "@/lib/ts"
+import Image from "next/image"
 
 export default function Awork({script}:{
   script:AworkScript,
@@ -46,9 +47,10 @@ export default function Awork({script}:{
 
     <i>
       <h3>周边贩售微店</h3>
-      <i className='weshop' style={{backgroundImage:`url(/weshop.png)`}}/>
+      <Image className='weshop' src='/weshop.png' alt='微店二维码' width={99} height={99}/>
       <a href={works.weshopURL} target='_blank'>网页版<i className="goto svg"/></a>
     </i>
+
 
     {script.manga?
     <i className='manga'>

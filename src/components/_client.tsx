@@ -1,4 +1,6 @@
 'use client'
+import { useEffect, useState } from "react"
+
 export const
 
 // 1. bilibili embedded video
@@ -29,13 +31,23 @@ SteamLink=({children,appId,useLogo=false,id,className,style}:Readonly<{
   id?:string,
   className?:string,
   style?:React.CSSProperties,
-}>)=><a id={id}style={style}
-  className={"steam "+className?className:''}
-  href={'steam://store/'+appId}
-  // onClick={
-  //   ()=>window.open('https://store.steampowered.com/app/'+appId,'_blank')
-  // }
->{children||useLogo&&<i className="steam svg" style={{width:'100%',height:'100%'}}/>}</a>,
+}>)=>{
+  const
+    userAgent = navigator.userAgent || "",
+    [link,setLink] = useState('steam://store/'+appId)
+
+  useEffect(()=>{
+    const
+      phones=/Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i
+    if(phones.test(userAgent))
+      setLink("https://store.steampowered.com/app/"+appId)
+  }, [appId,userAgent])
+
+  return<a id={id}style={style}
+    className={"steam "+className?className:''}
+    href={link}
+  >{children||useLogo&&<i className="steam svg" style={{width:'100%',height:'100%'}}/>}</a>
+},
 
 
 
