@@ -26,6 +26,18 @@ export type AworkScript = {
   manga?:unknown
 }
 
+/** infos页 单个消息 */
+export type InfoScript = {
+  /** 消息标题 */
+  title:string
+  /** 消息内容 */
+  ctt:string
+  /** 消息时间 `2025.2.2` */
+  dt:string
+}
+
+
+
 
 
 /* everything type */

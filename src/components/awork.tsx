@@ -55,9 +55,11 @@ export default function Awork({script}:{
     {script.manga?
     <i className='manga'>
       <h3>阅读衍生小说及漫画</h3>
-      {/* <MangaLink manga={script.manga}/> */}
+      {/* TODO: 漫画区块 */}
+      <p style={{margin:'auto',paddingBottom:'1em',fontFamily:'sans-serif'}}>建设中……<br/>敬请期待～！</p>
       <div className="smol" style={{backgroundImage:`url(/${script.dir}/smol3.png)`}}/>
     </i>:null
+
     }
 
   </q>

@@ -1,4 +1,4 @@
-import { AworkScript } from "./lib/ts"
+import { AworkScript, InfoScript } from "./lib/ts"
 
 export const
 
@@ -139,7 +139,7 @@ works:{
   // 微店网页版链接
   weshopURL:'https://weidian.com/?userid=1744983385',
 },
-/* 游戏信息对象变量名使用备忘剪切板
+/* 游戏信息对象格式备忘剪切板
 
     // 《游戏名称（注释用）》
     XXX:{ dir:'指定public/内的图片资源文件夹名',
@@ -173,9 +173,35 @@ works:{
 
 
 // ▉ 最新情报 ▉
-infos={
+infos:{data:InfoScript[]}={
+  data:[ // 从最上面加新消息！
+/* 最新情报消息格式备忘剪切板
+    {
+      title:'消息标题',
+      ctt:'消息内容',
+      dt:'2025.2.10',
+    },
+*/
 
+    {
+      title:'测试标题',
+      ctt:'测试内容。。。信息正文。。。',
+      dt:'2025.2.11',
+    },
+
+    {
+      title:'官网非正式公开',
+      ctt:'我们的官网（千迹制作组官方网站）非正式对外公开！当前网页外观非最终效果。正式公开日未定。',
+      dt:'2025.2.2',
+    },
+    {
+      title:'制作组计划参加上海ComicQuest02',
+      ctt:'我们已经在上海ComicQuest02（3月15日~16日开展），申请摊位，预计将展出部分已有制品，并且会发布现场限定无料方卡。',
+      dt:'2025.2.2',
+    },
+  ]
 },
+
 
 
 

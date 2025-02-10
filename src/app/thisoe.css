@@ -208,7 +208,7 @@ footer{
 
 /*******   TIMELINE   *******/
 ol{flex-direction:column}
-li{
+ol>li{
   position:relative;
   padding-left:30pt;
   &>i{z-index:7}
@@ -268,7 +268,7 @@ li{
 
 /*******   WORKS   *******/
 #works{
-  & li{padding-bottom:30pt}
+  & ol>li{padding-bottom:30pt}
   & article{
     width:calc(100% - 36pt);
     padding:7pt 18pt 9pt 12pt;
@@ -279,7 +279,7 @@ li{
 /* Awork */
 q.awork{
   margin:auto;
-  grid-template-columns:auto-flow 252pt 1fr 1fr;
+  grid-template-columns:auto 186.5pt 1fr 1fr;
   grid-template-rows:auto 180px;
   grid-template-areas:
     'thumbnail thumbnail thumbnail thumbnail'
@@ -290,7 +290,7 @@ q.awork{
     flex-direction:column;
     & h3{
       margin:0 auto;
-      font-size:16pt;
+      font-size:15pt;
       line-height:2;
     }
     &>a{
@@ -406,9 +406,60 @@ q.awork{
   }
 }
 
+
+
 /*******   INFOS   *******/
 #infos{
-  
+  & h2{transform:translateX(-16pt)}
+  & ol{max-width:720pt;margin:0 auto;}
+  & ol>li{padding-bottom:36pt}
+  & article{
+    width:calc(100% - 99pt);
+    padding-left:12pt;
+  }
+}
+i.ainfo{
+  margin:auto;
+  flex-direction:column;
+  &>i{
+    flex-direction:row;
+    justify-content:flex-end;
+    flex-wrap:wrap;
+    align-self: flex-end;
+    max-width:72%;
+    gap:9pt;
+    &>h3{
+      display:flex;
+      flex-wrap:nowrap;
+      align-items:center;
+      gap:3pt;
+      margin:0;
+      padding:0 3pt;
+      font-size:13pt;
+      line-height:16pt;
+      text-shadow:var(--sh);
+      background:var(--thisoe);
+      &::before,&::after{content:'#';font-size:9pt}
+    }
+  }
+  & ul{
+    flex-direction:column;
+    min-height:39pt;
+    margin-top:7px;
+    padding:0 12pt 16pt 27pt;
+    background:var(--awork-bg);
+    &>li{
+      position:relative;
+      display:block;
+      margin:1em 0;
+      &::before{ content:'•';
+        font-family:sans-serif;
+        font-weight:900;
+        position:absolute;
+        left:-1em;
+      }
+    }
+  }
 }
 
 
@@ -424,14 +475,17 @@ q.awork{
 
 
 /* ~~~   screen:pad   ~~~ */
-@media only screen and (max-width: 1020px) {
+/* @media only screen and (max-width: 1020px) {
   
-}
+} */
 
 
 
-/* ~~~   screen:phone   ~~~ */
+/* ~~~   screen:phone 800   ~~~ */
 @media only screen and (max-width: 800px) {
+  /* TODO: DELETE */
+  #tmp{left:1vw !important}
+
   /* nav */
   #nav button{display:flex}
   nav{
@@ -476,11 +530,17 @@ q.awork{
         'manga manga manga';
     }
   }
-  /* TODO: DELETE */
-  #tmp{left:1vw !important}
+
+  /* infos */
+  i.ainfo{ &>i{
+    max-width:63%;
+  }}
 }
 
-@media only screen and (max-width: 567px) {
+
+
+/* ~~~   screen:phone 520   ~~~ */
+@media only screen and (max-width: 520px) {
   header{padding:0 9pt;width:calc(100vw - 18pt)}
   #nav a:has(.bili){display:none}
   q.awork{
@@ -500,9 +560,15 @@ q.awork{
         'manga manga';
     }
   }
+  i.ainfo{ &>i{
+    max-width:50%;
+  }}
 }
 
-@media only screen and (max-width: 500px) {
+
+
+/* ~~~   screen:phone 400   ~~~ */
+@media only screen and (max-width: 400px) {
   a#h1{
     & h1:nth-child(1){display:none}
     & h1:nth-child(2){display:block}
