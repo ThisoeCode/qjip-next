@@ -48,7 +48,7 @@ export default function Awork({script}:{
     <i>
       <h3>周边贩售微店</h3>
       <Image className='weshop' src='/weshop.png' alt='微店二维码' width={99} height={99}/>
-      <a href={works.weshopURL} target='_blank'>网页版<i className="goto svg"/></a>
+      <a href={works.weshopURL} target='_blank' rel="noopener noreferrer">网页版<i className="goto svg"/></a>
     </i>
 
 

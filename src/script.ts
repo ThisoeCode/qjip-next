@@ -222,7 +222,7 @@ about={
       href:'https://space.bilibili.com/2005632',
     },{
       label:'玩家Q群：678609648',
-      href:'https://jq.qq.com/?_wv=1027&k=678609648',
+      href:'',
     }],
   },
 },

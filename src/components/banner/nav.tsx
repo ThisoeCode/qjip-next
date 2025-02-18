@@ -38,10 +38,9 @@ export default function Nav({bgc}:{bgc:string}){
         nav{background-color:${bgc}}
       }
     `}</style>
-    <a href={sc.weiboHref} target="_blank"><i className="weibo svg"/></a>
-    <a href={sc.biliHref} target="_blank"><i className="bili svg"/></a>
+    <a href={sc.weiboHref} target="_blank" rel="noopener noreferrer"><i className="weibo svg"/></a>
+    <a href={sc.biliHref} target="_blank" rel="noopener noreferrer"><i className="bili svg"/></a>
     <button onClick={()=>setShow(!isShow)}>
-
 
       <i className={(isShow?'close':'burger')+" svg"}/>
     </button>

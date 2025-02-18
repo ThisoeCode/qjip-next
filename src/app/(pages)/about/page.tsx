@@ -4,8 +4,8 @@ export const metadata={title:nav.about}
 
 export default function _(){
   return<main id="about">
-    <i className="bg"/><i className="bg"/>
-    <i id='tatie'/>
+    <i className="bg"/>
+    <i id='tatie'/> <h3>Qiji<br/>Production</h3>
     <i id="tmp">
       <h2>{about.tmpBlock.title}</h2>
       <p>{
@@ -18,15 +18,19 @@ export default function _(){
         )
       }</p>
       <ol>
-        {about.tmpBlock.links.map((link, i)=>(
+        {about.tmpBlock.links.toReversed().map((link, i)=>(
           <li key={i} className="pink_title">
             <i/><hr/><p>
-              <a href={link.href} target="_blank">{/* rel="noopener noreferrer"*/}{link.label}</a>
+              <a
+                href={link.href||undefined}
+                target="_blank"
+                rel="noopener noreferrer">
+                  {link.label}
+              </a>
             </p>
           </li>
         ))}
       </ol>
     </i>
-    <h3>Qiji<br/>Production</h3>
   </main>
 }
